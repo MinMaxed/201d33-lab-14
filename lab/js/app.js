@@ -1,7 +1,16 @@
 'use strict';
 
-// TODO: Create a "Cart" constructor that holds quantity, item, an an array of items in the cart
+var cartQuantity = [];
+var cartProductNames = [];
+Product.allProducts = [];
 
+// TODO: Create a "Cart" constructor that holds quantity, item, an an array of items in the cart
+function Cart (quantity, name) {
+  this.name = name;
+  
+  cartQuantity.push(this.name);
+  cartProductNames.push(this.quantity);
+}
 
 // Product Contructor
 var Product = function(filePath, name) {
@@ -9,7 +18,6 @@ var Product = function(filePath, name) {
   this.name = name;
   Product.allProducts.push(this);
 };
-Product.allProducts = [];
 
 function generateCatalog() {
   new Product('assets/bag.jpg', 'Bag');

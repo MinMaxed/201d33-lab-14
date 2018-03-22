@@ -6,15 +6,25 @@ function loadCart() {
   // TODO: Pull the cart (if it exists) from Local Storage and make available to this app
 }
 
-// TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
+// TODO: Fill in the <tr>'s under the <tbody> for each item in the cart 
+var body = parent.getElementsByTagName('tbody');
+
 function showCart() {
 
   // TODO: Find the table
+  var findTable = document.getElementById('cart');
 
   // TODO: Iterate over the items in the cart
+  for (var i = 0; i < Cart.length; i++) {
+
+  }
   // TODO: Create a TR
+  var trElement = document.createElement('tr');
   // TODO: Create a TD for the quantity and the item
+  var tdElement = document.createElement('td');
   // TODO: Add the TR to the TBODY and both TD's to the TR
+  trElement.appendChild(tdElement);
+  body.appendChild(trElement);
 
 }
 
@@ -25,7 +35,7 @@ function removeItemFromCart() {
 }
 
 // TODO: Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
-
+// sectionElement.addEventListener('click', removeItemFromCart);
 loadCart();
 
 showCart();

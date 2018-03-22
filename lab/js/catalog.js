@@ -6,17 +6,18 @@ function populateForm() {
 
 function handleSubmit(event) {
   // TODO: Prevent the page from reloading
+  event.preventDefault();
 
   // Do all the things
   addSelectedItemToCart();
   saveCartToLocalStorage();
   updateCounter();
   updateCartPreview();
-    
 }
 
 function addSelectedItemToCart() {
   // TODO: Add the selected item and quantity to the cart
+  // item tag select
 }
 
 function saveCartToLocalStorage() {
