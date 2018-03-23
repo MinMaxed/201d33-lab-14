@@ -21,8 +21,10 @@ function showCart() {
   // TODO: Find the table
   var findTable = document.getElementById('cart');
   // TODO: Iterate over the items in the cart
+  
+  // PSEUDOCODE: 
   for (var i = 0; i < Cart.length; i++) {
-
+     iterate over cart length to display each item and quantity on td/tr's 
   }
   // TODO: Create a TR
   var trElement = document.createElement('tr');
@@ -38,10 +40,16 @@ function removeItemFromCart() {
   // TODO: When a delete link is clicked, rebuild the Cart array without that item
   // TODO: Save the cart back to local storage
   // TODO: Re-draw the cart table
-}
+  
+//   PSEUDOCODE: reverse of catalog, take selected items and remove from cart, push new cart to local storage,
+
+// }
 
 // TODO: Create an event listener so that when the delete link is clicked, the removeItemFromCart method is invoked.
-// sectionElement.addEventListener('click', removeItemFromCart);
+sectionElement.addEventListener('click', removeItemFromCart);
+
+// PSEUDOCODE: event listener connected to the table id cart. 
+
 loadCart();
 
 showCart();

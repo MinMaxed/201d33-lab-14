@@ -4,12 +4,25 @@
 
 // TODO: Create a "Cart" constructor that holds quantity, item, and an array of items in the cart
 
-// var Cart = function (quantity, item, []) {
-//   this.name = name;
-//   this.quantity = quantity;
-//   this.item = item;
-//   this.array = array[];
-// }
+var Cart = function (name, totalquantity) {
+  this.name = name;
+  this.quantity = totalquantity;
+  this.items = [];
+  this.array=[];
+};
+
+console.log(Cart);
+// var emptyCart = new Cart ()
+
+
+// pushing Cart to LS to be grabbed on other JS files.
+function startingCart () {
+  var saveCart = JSON.stringify(Cart);
+  localStorage.setItem('actualCartman', saveCart);
+  console.log('Hello, world~');
+}
+console.log(startingCart);
+
 
 // Product Contructor
 var Product = function (filePath, name) {
@@ -18,7 +31,6 @@ var Product = function (filePath, name) {
   Product.allProducts.push(this);
 };
 Product.allProducts = [];
-
 
 function generateCatalog() {
   new Product('assets/bag.jpg', 'Bag');
