@@ -1,10 +1,31 @@
 'use strict';
 
-// TODO: Create a "Cart" constructor that holds quantity, item, an an array of items in the cart
+// console.log(Product.allProducts);
+
+// TODO: Create a "Cart" constructor that holds quantity, item, and an array of items in the cart
+
+var Cart = function (name, totalquantity) {
+  this.name = name;
+  this.quantity = totalquantity;
+  this.items = [];
+  this.array=[];
+};
+
+console.log(Cart);
+// var emptyCart = new Cart ()
+
+
+// pushing Cart to LS to be grabbed on other JS files.
+function startingCart () {
+  var saveCart = JSON.stringify(Cart);
+  localStorage.setItem('actualCartman', saveCart);
+  console.log('Hello, world~');
+}
+console.log(startingCart);
 
 
 // Product Contructor
-var Product = function(filePath, name) {
+var Product = function (filePath, name) {
   this.filePath = filePath;
   this.name = name;
   Product.allProducts.push(this);
@@ -36,3 +57,21 @@ function generateCatalog() {
 
 // Initialize the app
 generateCatalog();
+setItem();
+// setUp();
+
+// function setUp() {
+//   if (useableCart && useableCart.length) {
+//     var catalogAsString = localStorage.getItem('cartItems');
+//     var useableCart = JSON.parse(catalogAsString);
+//     console.log('loaded from local');
+//     return;
+//   }
+//   console.log('not from local');
+// }
+
+function setItem() {
+  var saveCatalog = JSON.stringify(Product.allProducts);
+  localStorage.setItem('cartItems', saveCatalog);
+}
+
